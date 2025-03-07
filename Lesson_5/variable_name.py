@@ -1,7 +1,22 @@
-#import keyword
+import keyword
+import string
 
 
-str_chek = '!"#$%&\'()*+,-./:;><?=@[\\]^`{|}~ '
-str_en_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-str_ru_alphabet = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ'
-str_number = '1234567890'
+def variable_name(variable_name: str) -> bool:
+    if variable_name in keyword.kwlist:
+        return False
+
+    if variable_name.count('_') > 1:
+        return False
+
+    if not variable_name:
+        return False
+
+    if variable_name[0].isdigit():
+        return False
+
+    allowed_characters = set(string.ascii_lowercase + string.digits + '_')
+    if not set(variable_name).issubset(allowed_characters):
+        return False
+
+    return True
