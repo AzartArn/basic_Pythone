@@ -7,4 +7,4 @@ while number > 9:
     input_list = str(number)
 print(input_list)
 
-print("\n🖖 🙊 🫡 🏆")
+print("\n🖖 🙊 🫡 🏆 ")
